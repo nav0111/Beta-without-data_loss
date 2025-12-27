@@ -41,9 +41,18 @@ def create_pinn(input_dim =1, output_dim=4, hidden_layers=2, hidden_dim =20):
     w_out = torch.nn.parameter(torch.randn(hidden_dim, output_dim)*0.1)
 
     #initialize biases at t=0
-    # S0=990, sigmoid^-1(990/1000) = 5.3
-    # I0=5, sigmoid^-1(5/1000) = -5.3
-    # I_u0=3, sigmoid^-1(3/1000) = 
+    #S= 990/1000= 0.99
+    #E= 5/1000= 0.005
+    #I_u0 = 3/1000 =0.003
+    #I_r0 = 2/1000 = 0.002
+    b_out = torch.nn.parameter(torch.tensor([0.99, 0.005, 0.003, 0.002], dtype= torch.float32))
+
+    #collect all parameters
+    params = [w1, b1, hidden_weights.append(w), hidden_biases.append(b), w_out, b_out]
+
+    return params
+
+
 
 
 
